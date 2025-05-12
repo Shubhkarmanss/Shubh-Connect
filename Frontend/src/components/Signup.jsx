@@ -25,7 +25,7 @@ const Signup = () => {
         e.preventDefault(); //agar ye ni use kiya toh page refresh ho jayega aur data kho jayega
         try {
             setLoading(true);
-            const res = await axios.post('https://shubh-connect.onrender.com/api/v1/user/register', input, {
+            const res = await axios.post('https://connectkaro.onrender.com/api/v1/user/register', input, {
                 headers: {
                     'Content-Type': 'application/json'
                 },

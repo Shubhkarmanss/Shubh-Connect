@@ -8,6 +8,7 @@ const isAuthenticated = async (req,res,next)=>{ //this checks that the user is l
                 success:false
             });
         }
+        //sirf token mil jane pr hum nahi keh sakte ki authenticated h, osko verify bhi karenge
         const decode = await jwt.verify(token, process.env.SECRET_KEY);// agar token mil gya toh osko verify bhi karenge
 
         if(!decode){

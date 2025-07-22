@@ -108,6 +108,19 @@ export const logout = async (_, res) => {
         console.log(error);
     }
 };
+export const getProfile = async (req, res) => {
+    try {
+        const userId = req.params.id;
+        let user = await User.findById(userId).populate({path:'posts', createdAt:-1}).populate('bookmarks');
+        return res.status(200).json({
+            user,
+            success: true
+        });
+    } catch (error) {
+        console.log(error);
+    }
+};
+
 export const editProfile = async (req, res) => { //sirf apni profile ko hi edit kr sakte ho ye nahi ki kisi ki bhi krlo, so now how to know ki kis id ko kr sakte h, so now we see the user id present in token
     try {
         const userId = req.id;

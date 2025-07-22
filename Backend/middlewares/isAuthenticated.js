@@ -6,6 +6,7 @@ const isAuthenticated = async (req,res,next)=>{ //this checks that the user is l
             return res.status(401).json({ //agar token nahi h 
                 message:'User not authenticated',
                 success:false
+                
             });
         }
         //sirf token mil jane pr hum nahi keh sakte ki authenticated h, osko verify bhi karenge
